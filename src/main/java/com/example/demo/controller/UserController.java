@@ -7,6 +7,7 @@ import com.example.demo.common.util.ResponseObject;
 import com.example.demo.model.vo.UserVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/login")
-    public ResponseEntity<ResponseObject> login(@Valid UserDTO user) {
+    public ResponseEntity<ResponseObject<?>> login(@Valid UserDTO user) {
         String token = userService.login(user);
         if (StringUtils.isNotEmpty(token)) {
             return ResponseEntity.ok(ResponseObject.success(token));
@@ -33,7 +34,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<ResponseObject> register(@Valid UserDTO user) {
+    public ResponseEntity<ResponseObject<?>> register(@Valid UserDTO user) {
         if (userService.isUsernameValid(user.getUsername())) {
             userService.register(user);
             return ResponseEntity.ok(ResponseObject.success(null, "注册成功"));
@@ -42,7 +43,8 @@ public class UserController {
     }
 
     @GetMapping("/get")
-    public ResponseEntity<ResponseObject> getUserInfo(HttpServletRequest request) {
+    @PreAuthorize("hasAnyRole('admin','user')")
+    public ResponseEntity<ResponseObject<?>> getUserInfo(HttpServletRequest request) {
         String token = JwtUtils.getRequestToken(request);
         UserVO vo = userService.getUserInfo(token);
         if (vo != null) {

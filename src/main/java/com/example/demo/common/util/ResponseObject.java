@@ -21,7 +21,7 @@ public class ResponseObject<T> {
      * @param data 获取的数据
      */
     public static <T> ResponseObject<T> success(T data) {
-        return new ResponseObject<T>(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getMessage(), data);
+        return new ResponseObject<>(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getMessage(), data);
     }
 
     /**
@@ -31,7 +31,7 @@ public class ResponseObject<T> {
      * @param  message 提示信息
      */
     public static <T> ResponseObject<T> success(T data, String message) {
-        return new ResponseObject<T>(ResponseCode.SUCCESS.getCode(), message, data);
+        return new ResponseObject<>(ResponseCode.SUCCESS.getCode(), message, data);
     }
 
     /**
@@ -39,7 +39,7 @@ public class ResponseObject<T> {
      * @param errorCode 错误码
      */
     public static <T> ResponseObject<T> failed(IErrorCode errorCode) {
-        return new ResponseObject<T>(errorCode.getCode(), errorCode.getMessage(), null);
+        return new ResponseObject<>(errorCode.getCode(), errorCode.getMessage(), null);
     }
 
     /**
@@ -48,7 +48,7 @@ public class ResponseObject<T> {
      * @param message 错误信息
      */
     public static <T> ResponseObject<T> failed(IErrorCode errorCode, String message) {
-        return new ResponseObject<T>(errorCode.getCode(), message, null);
+        return new ResponseObject<>(errorCode.getCode(), message, null);
     }
 
     /**
@@ -56,7 +56,7 @@ public class ResponseObject<T> {
      * @param message 提示信息
      */
     public static <T> ResponseObject<T> failed(String message) {
-        return new ResponseObject<T>(ResponseCode.FAILED.getCode(), message, null);
+        return new ResponseObject<>(ResponseCode.FAILED.getCode(), message, null);
     }
 
     /**
@@ -78,21 +78,21 @@ public class ResponseObject<T> {
      * @param message 提示信息
      */
     public static <T> ResponseObject<T> validateFailed(String message) {
-        return new ResponseObject<T>(ResponseCode.VALIDATE_FAILED.getCode(), message, null);
+        return new ResponseObject<>(ResponseCode.VALIDATE_FAILED.getCode(), message, null);
     }
 
     /**
      * 未登录返回结果
      */
     public static <T> ResponseObject<T> unauthorized() {
-        return new ResponseObject<T>(ResponseCode.UNAUTHORIZED.getCode(), ResponseCode.UNAUTHORIZED.getMessage(), null);
+        return new ResponseObject<>(ResponseCode.UNAUTHORIZED.getCode(), ResponseCode.UNAUTHORIZED.getMessage(), null);
     }
 
     /**
      * 未授权返回结果
      */
     public static <T> ResponseObject<T> forbidden(T data) {
-        return new ResponseObject<T>(ResponseCode.FORBIDDEN.getCode(), ResponseCode.FORBIDDEN.getMessage(), data);
+        return new ResponseObject<>(ResponseCode.FORBIDDEN.getCode(), ResponseCode.FORBIDDEN.getMessage(), data);
     }
 
 }
