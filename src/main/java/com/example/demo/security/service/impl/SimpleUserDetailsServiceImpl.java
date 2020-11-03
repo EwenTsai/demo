@@ -2,8 +2,8 @@ package com.example.demo.security.service.impl;
 
 import com.example.demo.security.entity.SimpleUserDetails;
 import com.example.demo.security.service.SimpleUserDetailsService;
-import com.example.demo.user.entity.User;
-import com.example.demo.user.repository.UserRepository;
+import com.example.demo.model.entity.User;
+import com.example.demo.model.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;

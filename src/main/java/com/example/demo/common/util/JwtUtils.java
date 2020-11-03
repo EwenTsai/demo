@@ -2,7 +2,7 @@ package com.example.demo.common.util;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.example.demo.user.entity.User;
+import com.example.demo.model.entity.User;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;

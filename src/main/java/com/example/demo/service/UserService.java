@@ -1,7 +1,7 @@
-package com.example.demo.user.service;
+package com.example.demo.service;
 
-import com.example.demo.user.dto.UserDTO;
-import com.example.demo.user.vo.UserVO;
+import com.example.demo.model.dto.UserDTO;
+import com.example.demo.model.vo.UserVO;
 
 public interface UserService {
 

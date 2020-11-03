@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum ResultCode implements IErrorCode {
+public enum ResponseCode implements IErrorCode {
 
     SUCCESS(200, "操作成功"),
     FAILED(500, "操作失败"),

@@ -1,14 +1,9 @@
-package com.example.demo.user.vo;
+package com.example.demo.model.vo;
 
-import com.example.demo.user.entity.User;
+import com.example.demo.model.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-/**
- * 用户前端展示对象
- * @author Roy Chen
- * @version 1.0.0
- */
 @Data
 @AllArgsConstructor
 public class UserVO {

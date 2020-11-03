@@ -2,7 +2,7 @@ package com.example.demo.security.handler;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.example.demo.common.util.Result;
+import com.example.demo.common.util.ResponseObject;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -19,7 +19,7 @@ public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
         httpServletResponse.setCharacterEncoding("UTF-8");
         httpServletResponse.setContentType("application/json");
-        httpServletResponse.getWriter().println(JSONObject.toJSONString(Result.unauthorized(), SerializerFeature.WriteMapNullValue));
+        httpServletResponse.getWriter().println(JSONObject.toJSONString(ResponseObject.unauthorized(), SerializerFeature.WriteMapNullValue));
         httpServletResponse.getWriter().flush();
     }
 

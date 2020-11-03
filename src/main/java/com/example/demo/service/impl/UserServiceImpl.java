@@ -1,13 +1,13 @@
-package com.example.demo.user.service.impl;
+package com.example.demo.service.impl;
 
 import com.example.demo.common.util.JwtUtils;
 import com.example.demo.redis.service.RedisService;
-import com.example.demo.user.dto.UserDTO;
-import com.example.demo.user.entity.User;
-import com.example.demo.user.repository.UserRepository;
+import com.example.demo.model.dto.UserDTO;
+import com.example.demo.model.entity.User;
+import com.example.demo.model.repository.UserRepository;
 import com.example.demo.security.util.SecurityUtils;
-import com.example.demo.user.service.UserService;
-import com.example.demo.user.vo.UserVO;
+import com.example.demo.service.UserService;
+import com.example.demo.model.vo.UserVO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -61,5 +61,4 @@ public class UserServiceImpl implements UserService {
         Optional<User> user = userRepository.findByUsername(username);
         return user.isEmpty() ? null : UserVO.convert(user.get());
     }
-
 }

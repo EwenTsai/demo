@@ -1,15 +1,10 @@
-package com.example.demo.user.dto;
+package com.example.demo.model.dto;
 
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
-/**
- * 用户转换对象
- * @author Roy Chen
- * @version 1.0.0
- */
 @Data
 public class UserDTO {
 

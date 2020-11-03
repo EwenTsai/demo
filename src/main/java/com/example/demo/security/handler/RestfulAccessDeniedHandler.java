@@ -2,7 +2,7 @@ package com.example.demo.security.handler;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.example.demo.common.util.Result;
+import com.example.demo.common.util.ResponseObject;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
@@ -19,7 +19,7 @@ public class RestfulAccessDeniedHandler implements AccessDeniedHandler {
     public void handle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AccessDeniedException e) throws IOException, ServletException {
         httpServletResponse.setCharacterEncoding("UTF-8");
         httpServletResponse.setContentType("application/json");
-        httpServletResponse.getWriter().println(JSONObject.toJSONString(Result.forbidden(e.getMessage()), SerializerFeature.WriteMapNullValue));
+        httpServletResponse.getWriter().println(JSONObject.toJSONString(ResponseObject.forbidden(e.getMessage()), SerializerFeature.WriteMapNullValue));
         httpServletResponse.getWriter().flush();
     }
 }
