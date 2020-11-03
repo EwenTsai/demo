@@ -1,5 +1,6 @@
-package com.example.demo.common.util;
+package com.example.demo.controller.response;
 
+import com.example.demo.common.util.IErrorCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

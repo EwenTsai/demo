@@ -2,7 +2,7 @@ package com.example.demo.security.handler;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.example.demo.common.util.ResponseObject;
+import com.example.demo.controller.response.ResponseObject;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;

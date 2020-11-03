@@ -3,7 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.common.util.JwtUtils;
 import com.example.demo.model.dto.UserDTO;
 import com.example.demo.service.UserService;
-import com.example.demo.common.util.ResponseObject;
+import com.example.demo.controller.response.ResponseObject;
 import com.example.demo.model.vo.UserVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.ResponseEntity;

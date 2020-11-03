@@ -2,7 +2,7 @@ package com.example.demo.security.handler;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.example.demo.common.util.ResponseObject;
+import com.example.demo.controller.response.ResponseObject;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
