@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @GetMapping("/get")
-    @PreAuthorize("hasAnyRole('user')")
+    @PreAuthorize("hasAnyRole('user', 'admin')")
     public ResponseEntity<ResponseObject<?>> getUserInfo(HttpServletRequest request) {
         String token = JwtUtils.getRequestToken(request);
         UserVO vo = userService.getUserInfo(token);
