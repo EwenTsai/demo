@@ -7,8 +7,8 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "user_right")
-public class UserRight {
+@Table(name = "user_role")
+public class UserRole {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,8 +17,8 @@ public class UserRight {
     @Column(name = "user_id")
     private String userId;
 
-    @Column(name = "right_id")
-    private String rightId;
+    @Column(name = "role_id")
+    private String roleId;
 
     @Column(name = "create_time")
     private Date createTime;
